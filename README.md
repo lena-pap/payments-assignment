@@ -20,10 +20,10 @@ We have set up a minimal Rails app with some models and tests added. Running rsp
 ```sh
 # Assuming the Rails app is set up and the database is created/migrated
 media_now $ rspec
-....**..*
+**.......*
 
-Finished in 0.06114 seconds (files took 2.5 seconds to load)
-9 examples, 0 failures, 3 pending
+Finished in 0.02163 seconds (files took 0.7978 seconds to load)
+10 examples, 0 failures, 3 pending
 ```
 If all the initially pending tests pass, then you have completed the assignment.
 
