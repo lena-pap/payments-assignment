@@ -10,6 +10,17 @@ RSpec.describe UpdatePackagePrice do
     expect(package.reload.price_cents).to eq(200_00)
   end
 
+  it "only updates the passed package price" do
+    package = Package.create!(name: "Dunderhonung")
+    other_package = Package.create!(name: "Farmors köttbullar", price_cents: 100_00)
+
+    expect {
+      UpdatePackagePrice.call(package, 200_00)
+    }.not_to change {
+      other_package.reload.price_cents
+    }
+  end
+
   it "stores the old price of the provided package in its price history" do
     package = Package.create!(name: "Dunderhonung", price_cents: 100_00)
 

@@ -7,7 +7,7 @@ class UpdatePackagePrice
       Price.create!(package: package, price_cents: package.price_cents)
 
       # Update the current price
-      Package.update!(price_cents: new_price_cents)
+      package.update!(price_cents: new_price_cents)
     end
   end
 end
