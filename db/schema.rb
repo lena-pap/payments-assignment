@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2023_09_02_123808) do
     t.index ["name"], name: "index_municipalities_on_name", unique: true
   end
 
+  create_table "package_municipality_prices", force: :cascade do |t|
+    t.integer "package_id"
+    t.integer "municipality_id"
+    t.integer "price_cents", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["municipality_id", "package_id"], name: "idx_packag_municipality_prices_on_municipality_id_and_packag_id", unique: true
+    t.index ["municipality_id"], name: "index_package_municipality_prices_on_municipality_id"
+    t.index ["package_id"], name: "index_package_municipality_prices_on_package_id"
+  end
+
   create_table "packages", force: :cascade do |t|
     t.integer "price_cents", default: 0, null: false
     t.string "name", null: false

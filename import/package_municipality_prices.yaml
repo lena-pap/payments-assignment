@@ -1,0 +1,22 @@
+---
+Stockholm: 
+  - premium:
+      price_cents: 200_00
+  - plus:
+      price_cents: 599_00
+  - basic:
+      price_cents: 111100
+Göteborg: 
+  - premium:
+      price_cents: 200_00
+  - plus:
+      price_cents: 599_00
+  - basic:
+      price_cents: 111100
+Malmö: 
+  - premium:
+      price_cents: 200_00
+  - plus:
+      price_cents: 599_00
+  - basic:
+      price_cents: 111100
