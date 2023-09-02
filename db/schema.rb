@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_183154) do
+ActiveRecord::Schema.define(version: 2023_09_02_123808) do
+
+  create_table "municipalities", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_municipalities_on_name", unique: true
+  end
 
   create_table "packages", force: :cascade do |t|
     t.integer "price_cents", default: 0, null: false
