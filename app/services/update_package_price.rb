@@ -9,6 +9,7 @@ class UpdatePackagePrice
       Price.create!(
         package: package,
         price_cents: price_for_municipality&.price_cents || package.price_cents,
+        to_price_cents: new_price_cents,
         municipality: price_for_municipality&.municipality
       )
 
