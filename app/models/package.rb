@@ -6,5 +6,4 @@ class Package < ApplicationRecord
   has_many :municipalities, through: :package_municipality_price
 
   validates :name, presence: true, uniqueness: true
-  validates :price_cents, presence: true
 end
