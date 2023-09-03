@@ -6,4 +6,8 @@ class Package < ApplicationRecord
   has_many :municipalities, through: :package_municipality_price
 
   validates :name, presence: true, uniqueness: true
+
+  def price_for(municipality_id)
+    package_municipality_prices.find_by(municipality_id: municipality_id)
+  end
 end
